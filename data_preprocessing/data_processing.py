@@ -30,3 +30,7 @@ y = labelencoder_y.fit_transform(y)
 from sklearn.preprocessing import OneHotEncoder
 onehotencoder = OneHotEncoder(categorical_features=[0])
 X = onehotencoder.fit_transform(X).toarray()
+
+# cross validation: split the data into train and test data
+from sklearn.model_selection import train_test_split 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
